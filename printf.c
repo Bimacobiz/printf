@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 		{_putchar(format[n]);
 			strlen++;
 		}
-		else if (format[n] == '%')
+		else if (format[n] == '%' && format[n + 1] != '\0')
 		{
 			n++;
 			strlen += checkfun(format[n + 1], arg_list);
@@ -44,7 +44,7 @@ int checkfun(char ch, va_list arg_list)
 	char *strr, chaa;
 
 	if (ch == '\0')
-	{	_putchar('\0');
+	{       _putchar('\0');
 		nn = 0;
 		return (nn);
 	}
@@ -69,5 +69,6 @@ int checkfun(char ch, va_list arg_list)
 		}
 		return (ii);
 	}
+	va_end(arg_list);
 	return (nn);
 }
