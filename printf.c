@@ -9,8 +9,8 @@
  */
 int _printf(const char *format, ...)
 {
-	char *str, char cha;
-	int i, n, int strlen = 0;
+	char *str, cha;
+	int i, n, strlen = 0;
 	va_list arg_list;
 
 	if (format == NULL)
