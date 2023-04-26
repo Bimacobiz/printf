@@ -69,5 +69,6 @@ int checkfun(char ch, va_list arg_list)
 		}
 		return (ii);
 	}
+	va_end(arg_list);
 	return (nn);
 }
