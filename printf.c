@@ -59,7 +59,7 @@ int checkfun(char ch, va_list arg_list)
 	else if (ch == 's')
 	{strr = va_arg(arg_list, char *);
 		if (strr == NULL)
-			str = "(null)";
+			strr = "(null)";
 		for (ii = 0; strr[ii] != '\0'; ii++)
 		{
 			_putchar(strr[ii]);
