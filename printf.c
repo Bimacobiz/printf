@@ -67,16 +67,8 @@ int checkfun(char ch, va_list arg_list)
 		for (ii = 0; strr[ii] != '\0'; ii++)
 		{
 			_putchar(strr[ii]);
-
 		}
 		return (ii);
-	}
-	else if (ch == '\0')
-		return (-1);
-	else
-	{if (!ch)
-		_putchar(ch);
-		return (2);
 	}
 	va_end(arg_list);
 	return (nn);
