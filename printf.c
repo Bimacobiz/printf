@@ -1,6 +1,7 @@
 #include <stddef.h>
 #include <stdarg.h>
 #include "main.h"
+#include <stdio.h>
 /**
  * _printf - produces output according to a format.
  * @format: the string or character to print
@@ -61,7 +62,8 @@ int checkfun(char ch, va_list arg_list)
 	}
 	else if (ch == 's')
 	{strr = va_arg(arg_list, char *);
-		nn++;
+		if (strr == NULL)
+			return (0);
 		for (ii = 0; strr[ii] != '\0'; ii++)
 		{
 			_putchar(strr[ii]);
