@@ -45,7 +45,7 @@ int checkfun(char ch, va_list arg_list)
 {
 	int nn = 0, ii;
 	char *strr;
-	int chaa;
+	char chaa;
 
 	if (ch == '%')
 	{
