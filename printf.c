@@ -10,11 +10,11 @@
  */
 int _printf(const char *format, ...)
 {
-	int n, strlen = 0;
+	int n = 0, strlen = 0;
 	va_list arg_list;
 
 	if (format == NULL)
-		return (0);
+		return (-1);
 	va_start(arg_list, format);
 
 	for (n = 0; format[n] != '\0'; n++)
@@ -25,8 +25,8 @@ int _printf(const char *format, ...)
 		}
 		else if (format[n] == '%' && format[n + 1] != '\0')
 		{
-			n++;
 			strlen += checkfun(format[n + 1], arg_list);
+			n++;
 		}
 	}
 	va_end(arg_list);
@@ -45,12 +45,6 @@ int checkfun(char ch, va_list arg_list)
 	char *strr;
 	int chaa;
 
-	if (ch == '\0')
-	{       _putchar('\0');
-		nn = 0;
-		return (nn);
-	}
-
 	if (ch == '%')
 	{_putchar('%');
 		nn = 1;
@@ -65,7 +59,7 @@ int checkfun(char ch, va_list arg_list)
 	else if (ch == 's')
 	{strr = va_arg(arg_list, char *);
 		if (strr == NULL)
-			return (0);
+			str = "(null)";
 		for (ii = 0; strr[ii] != '\0'; ii++)
 		{
 			_putchar(strr[ii]);
