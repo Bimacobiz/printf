@@ -56,7 +56,7 @@ int checkfun(char ch, va_list arg_list)
 	else if (ch == 'c')
 	{
 		chaa = va_arg(arg_list, int);
-		if (chaa == '\0')
+		if (!chaa)
 			return (0);
 		_putchar(chaa);
 		nn = 1;
