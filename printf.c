@@ -60,6 +60,7 @@ int checkfun(char ch, va_list arg_list)
 	{chaa = va_arg(arg_list, int);
 		_putchar(chaa);
 		nn = 1;
+		return (nn);
 	}
 	else if (ch == 's')
 	{strr = va_arg(arg_list, char *);
