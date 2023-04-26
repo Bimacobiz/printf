@@ -48,12 +48,16 @@ int checkfun(char ch, va_list arg_list)
 	int chaa;
 
 	if (ch == '%')
-	{_putchar('%');
+	{
+		_putchar('%');
 		nn = 1;
 		return (nn);
 	}
 	else if (ch == 'c')
-	{chaa = va_arg(arg_list, int);
+	{
+		chaa = va_arg(arg_list, int);
+		if (chaa == '\0')
+			return (0);
 		_putchar(chaa);
 		nn = 1;
 		return (nn);
