@@ -41,7 +41,8 @@ int _printf(const char *format, ...)
 int checkfun(char ch, va_list arg_list)
 {
 	int nn = 0, ii;
-	char *strr, chaa;
+	char *strr;
+	int chaa;
 
 	if (ch == '\0')
 	{       _putchar('\0');
