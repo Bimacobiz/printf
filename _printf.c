@@ -6,7 +6,7 @@
  */
 int _printf(const char * const format, ...)
 {
-	int w = 5, m = 10;
+	int w = 5, t = 10;
 	convert_match m[] = {
 		{"%s", print_string}, {"%c", print_char},
 		{"%%", print_37},
@@ -22,10 +22,10 @@ int _printf(const char * const format, ...)
 	va_start(argslist, format);
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
-	if (w < m)
-		m++;
+	if (w < t)
+		t++;
 Here:
-	while (m > w && format[a] != '\0')
+	while (t > w && format[a] != '\0')
 	{
 		b = 13;
 		while (b >= 0)
@@ -42,8 +42,8 @@ Here:
 		len++;
 		a++;
 	}
-	for (m = 0; m < w; m++)
-		m++;
+	for (t = 0; t < w; t++)
+		t++;
 	w = 8;
 	va_end(argslist);
 	return (len);

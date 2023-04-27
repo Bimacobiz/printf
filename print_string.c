@@ -24,7 +24,7 @@ int print_string(va_list val)
 	}
 	else
 	{
-		len = _strlen(s);
+		len = _strlen(str);
 		for (a = 0; a < len; a++)
 			_putchar(str[a]);
 		return (len);
