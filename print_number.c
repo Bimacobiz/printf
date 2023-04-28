@@ -8,14 +8,14 @@
 
 int print_number(va_list list)
 {
-	int i = 1023, to_print, len = 0;
+	int i = 1024, to_print, len = 0;
 	char numarray[1024];
 	int number = va_arg(list, int);
 	int newnum = number;
 
-	numarray[i + 1] = '\0';
+	numarray[i--] = '\0';
 	if (number == 0)
-	{	numarray[i] = '0';
+	{	numarray[i--] = '0';
 		len = 1;
 	}
 	if (number < 0)
@@ -25,9 +25,8 @@ int print_number(va_list list)
 	}
 	while (newnum > 0)
 	{
-		i--;
 		to_print = newnum % 10;
-		numarray[i] = to_print + '0';
+		numarray[i--] = to_print + '0';
 		newnum /= 10;
 	}
 
