@@ -1,5 +1,9 @@
 #include "main.h"
-
+/**
+ * _printf - prints based on formats
+ * @format: the input string
+ * Return: the length of the string printed;
+ */
 int _printf(const char *format, ...)
 {
 	int n = 0, len = 0;
@@ -49,6 +53,7 @@ int _printf(const char *format, ...)
 int print_char(va_list list)
 {
 	char ch = va_arg(list, int);
+
 	_putchar(ch);
 	return (1);
 }
