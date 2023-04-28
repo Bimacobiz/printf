@@ -48,6 +48,7 @@ int _printf(const char *format, ...)
 
 int print_char(va_list list)
 {
+	char ch = va_arg(list, int);
 	_putchar(ch);
 	return (1);
 }
