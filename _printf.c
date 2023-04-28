@@ -48,12 +48,8 @@ int _printf(const char *format, ...)
 
 int print_char(va_list list)
 {
-	char ch = va_arg(list, int);
-	if (!ch)
-		return (-1);
-
 	_putchar(ch);
-	return (0);
+	return (1);
 }
 
 /**
@@ -67,8 +63,8 @@ int print_string(va_list list)
 	int len = 0;
 	char *str = va_arg(list, char *);
 
-	if (!str)
-		return (-1);
+	if (str == NULL)
+		str = "(null)";
 
 	for (len = 0; *str != '\0'; len++)
 		_putchar(str[len]);
