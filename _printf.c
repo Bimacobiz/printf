@@ -36,6 +36,7 @@ int _printf(const char *format, ...)
 			n += 2;
 		}
 	}
+	va_end(list);
 	return (len);
 }
 
