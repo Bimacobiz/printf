@@ -65,7 +65,7 @@ int print_char(va_list list)
 int print_string(va_list list)
 {
 	int len = 0;
-	char *str = va_arg(list, char []);
+	char *str = va_arg(list, char *);
 
 	if (!str)
 		return (-1);
