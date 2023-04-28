@@ -39,6 +39,18 @@ int _printf(const char *format, ...)
 			len += print_string(list);
 			n += 1;
 		}
+		else if (format[n] == '%' && (format[n + 1] != 'c' || format[n + 1] != 's'))
+		{
+			_putchar(format[n + 1]);
+			len++;
+			n++;
+		}
+		else if (format[n] == '%' && (format[n + 1] == 'd' || format[n + 1] == 'i'))
+		{
+			len += print_number(list);
+			n++;
+		}
+
 	}
 	va_end(list);
 	return (len);
