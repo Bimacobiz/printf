@@ -10,23 +10,25 @@ int print_number(va_list list)
 {
 	int i = 1022, to_print, len = 0;
 	char numarray[1024];
-	long int number = va_arg(list, long int);
-	unsigned long int newnum;
+	int number = va_arg(list, int);
+	int newnum = number;
 
 	numarray[i + 1] = '\0';
 	if (number == 0)
-		numarray[i] = '0';
-	if (number >= 0)
-		newnum = (unsigned long int) number;
-	else
+	{	numarray[i] = '0';
+		len = 1;
+	}
+	if (number < 0)
+	{
 		_putchar('-');
-	newnum = (unsigned long int) (-1 * number);
+		newnum = (-1 * number);
+	}
 	while (newnum > 0)
 	{
+		i--;
 		to_print = newnum % 10;
 		numarray[i] = to_print + '0';
 		newnum /= 10;
-		i--;
 	}
 
 	while (numarray[i])
