@@ -8,6 +8,8 @@ int _printf(const char *format, ...)
 	if (format == NULL)
 		return (-1);
 
+
+	va_start(list, format);
 	for (n = 0; format[n] != '\0'; n++)
 	{
 		if (format[n] != '%')
