@@ -23,17 +23,17 @@ int _printf(const char *format, ...)
 		{
 			_putchar('%');
 			len++;
-			n += 2;
+			n += 1;
 		}
 		else if (format[n] == '%' && format[n + 1] == 'c')
 		{
 			len += print_char(list);
-			n += 2;
+			n += 1;
 		}
 		else if (format[n] == '%' && format[n + 1] == 's')
 		{
 			len += print_string(list);
-			n += 2;
+			n += 1;
 		}
 	}
 	va_end(list);
