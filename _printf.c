@@ -12,7 +12,7 @@ int _printf(const char *format, ...)
 	va_start(list, format);
 	for (n = 0; format[n] != '\0'; n++)
 	{
-		if (format[n] != '%')
+		if (format[n] != '%' && format[n])
 		{
 			_putchar(format[n]);
 			len++;
@@ -49,6 +49,8 @@ int _printf(const char *format, ...)
 int print_char(va_list list)
 {
 	char ch = va_arg(list, int);
+	if (!ch)
+		return (-1);
 
 	_putchar(ch);
 	return (1);
@@ -63,10 +65,13 @@ int print_char(va_list list)
 int print_string(va_list list)
 {
 	int len = 0;
-	char *str = va_arg(list, char *);
+	char *str = va_arg(list, char []);
+
+	if (!str)
+		return (-1);
 
 	for (len = 0; *str != '\0'; len++)
 		_putchar(str[len]);
 
-	return (len);
+	return (len + 1);
 }
