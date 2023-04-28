@@ -17,18 +17,18 @@ int _printf(const char *format, ...)
 		}
 		if (format[n] == '%' && format[n + 1] == '\0')
 			return (-1);
-		if (format[n] == '%' && format[n + 1] == '%')
+		else if (format[n] == '%' && format[n + 1] == '%')
 		{
 			_putchar('%');
 			len++;
 			n++;
 		}
-		if (format[n] == '%' && format[n + 1] == 'c')
+		else if (format[n] == '%' && format[n + 1] == 'c')
 		{
 			len += print_char(list);
 			n++;
 		}
-		if (format[n] == '%' && format[n + 1] == 's')
+		else if (format[n] == '%' && format[n + 1] == 's')
 		{
 			len += print_string(list);
 			n++;
