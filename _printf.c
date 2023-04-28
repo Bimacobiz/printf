@@ -67,8 +67,11 @@ int print_string(va_list list)
 	if (str == NULL)
 		str = "(null)";
 
-	for (len = 0; *str != '\0'; len++)
+	while (str[len] != '\0')
+	{
 		_putchar(str[len]);
+		len++;
+	}
 
-	return (len + 1);
+	return (len);
 }
