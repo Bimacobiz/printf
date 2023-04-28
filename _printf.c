@@ -21,17 +21,17 @@ int _printf(const char *format, ...)
 		{
 			_putchar('%');
 			len++;
-			n++;
+			n += 2;
 		}
 		else if (format[n] == '%' && format[n + 1] == 'c')
 		{
 			len += print_char(list);
-			n++;
+			n += 2;
 		}
 		else if (format[n] == '%' && format[n + 1] == 's')
 		{
 			len += print_string(list);
-			n++;
+			n += 2;
 		}
 	}
 	return (len);
