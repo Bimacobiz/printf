@@ -13,9 +13,9 @@ int print_number(va_list list)
 	int number = va_arg(list, int);
 	int newnum = number;
 
-	numarray[i--] = '\0';
+	numarray[i] = '\0';
 	if (number == 0)
-	{	numarray[i--] = '0';
+	{	numarray[i - 1] = '0';
 		len = 1;
 	}
 	if (number < 0)
@@ -26,8 +26,9 @@ int print_number(va_list list)
 	while (newnum > 0)
 	{
 		to_print = newnum % 10;
-		numarray[i--] = to_print + '0';
+		numarray[i - 1] = to_print + '0';
 		newnum /= 10;
+		i--;
 	}
 
 	while (numarray[i])
