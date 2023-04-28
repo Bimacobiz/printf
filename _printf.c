@@ -53,7 +53,7 @@ int print_char(va_list list)
 		return (-1);
 
 	_putchar(ch);
-	return (1);
+	return (0);
 }
 
 /**
