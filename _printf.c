@@ -11,43 +11,30 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)
 		return (-1);
-
-
 	va_start(list, format);
 	for (n = 0; format[n] != '\0'; n++)
 	{
 		if (format[n] != '%' && format[n])
-		{
-			_putchar(format[n]);
+		{_putchar(format[n]);
 			len++;
 		}
 		if (format[n] == '%' && format[n + 1] == '\0')
 			return (-1);
 		else if (format[n] == '%' && format[n + 1] == '%')
-		{
-			_putchar('%');
+		{_putchar('%');
 			len++;
 			n += 1;
 		}
 		else if (format[n] == '%' && format[n + 1] == 'c')
-		{
-			len += print_char(list);
+		{len += print_char(list);
 			n += 1;
 		}
 		else if (format[n] == '%' && format[n + 1] == 's')
-		{
-			len += print_string(list);
+		{len += print_string(list);
 			n += 1;
 		}
-		/*else if (format[n] == '%' && (format[n + 1] != 'c' || format[n + 1] != 's'))
-		{
-			_putchar(format[n + 1]);
-			len++;
-			n++;
-		}*/
 		else if (format[n] == '%' && (format[n + 1] == 'd' || format[n + 1] == 'i'))
-		{
-			len += print_number(list);
+		{len += print_number(list);
 			n++;
 		}
 

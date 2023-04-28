@@ -8,7 +8,7 @@
 
 int print_number(va_list list)
 {
-	int i = 1022, to_print, len = 0;
+	int i = 1023, to_print, len = 0;
 	char numarray[1024];
 	int number = va_arg(list, int);
 	int newnum = number;
