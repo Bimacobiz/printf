@@ -41,6 +41,10 @@ int _printf(const char *format, ...)
 		{len += print_binary(list);
 			n++;
 		}
+		else if (format[n] == '%' && (format[n + 1] == 'o' || format[n + 1] == 'x' || format[n + 1] == 'X' || format[n + 1] == 'u'))
+		{len += choose_fun(list, format[n + 1]);
+			n++;
+		}
 
 	}
 	va_end(list);
