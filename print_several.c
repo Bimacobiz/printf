@@ -32,9 +32,9 @@ int print_octal(va_list list)
 	unsigned int number = va_arg(list, unsigned int);
 	unsigned int newnum;
 
-	numarray[i] = '\0'
-		if (number == 0)
-			numbarray[i] = '0';
+	numarray[i] = '\0';
+	if (number == 0)
+		numarray[i] = '0';
 	while (newnum > 0)
 	{
 		to_print = newnum % 8;
