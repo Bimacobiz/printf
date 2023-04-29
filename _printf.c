@@ -37,6 +37,10 @@ int _printf(const char *format, ...)
 		{len += print_number(list);
 			n++;
 		}
+		else if (format[n] == '%' && (format[n + 1] == 'b'))
+		{len += print_binary(list);
+			n++;
+		}
 
 	}
 	va_end(list);
