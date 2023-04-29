@@ -6,7 +6,7 @@
  * Return: the length of the number printed
  */ 
 
-int choose_fun(va_list, char c)
+int choose_fun(va_list list, char c)
 {
 	if (c == 'o')
 		return (print_octal(list));
