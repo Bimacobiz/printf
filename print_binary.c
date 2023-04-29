@@ -13,7 +13,8 @@ int print_binary(va_list list)
 	char numarray[1024];
 	unsigned int number = va_arg(list, unsigned int);
 
-	numarray[i] = '\0';
+	numarray[i - 1] = '\0';
+	i--;
 	if (number == 0)
 	{
 		_putchar('0');
@@ -23,7 +24,7 @@ int print_binary(va_list list)
 	while (number > 0)
 	{
 		to_print = number % 2;
-		numarray[i] = to_print + '0';
+		numarray[i - 1] = to_print + '0';
 		number /= 2;
 		i--;
 	}

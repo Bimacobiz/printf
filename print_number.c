@@ -13,7 +13,7 @@ int print_number(va_list list)
 	int number = va_arg(list, int);
 	int newnum = number;
 
-	numarray[i] = '\0';
+	numarray[i--] = '\0';
 	if (number == 0)
 	{	_putchar('0');
 		return (1);
