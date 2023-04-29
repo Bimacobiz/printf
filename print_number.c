@@ -30,7 +30,7 @@ int print_number(va_list list)
 		newnum /= 10;
 		i--;
 	}
-	
+
 	while (numarray[i])
 	{
 		_putchar(numarray[i]);
