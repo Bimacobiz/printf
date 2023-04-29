@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * choose_fun - choose appropriate function to call
  * @list: argument list from the main function
