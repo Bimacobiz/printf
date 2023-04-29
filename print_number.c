@@ -15,8 +15,8 @@ int print_number(va_list list)
 
 	numarray[i] = '\0';
 	if (number == 0)
-	{	numarray[i - 1] = '0';
-		len = 1;
+	{	_putchar('0');
+		return (1);
 	}
 	if (number < 0)
 	{
@@ -30,7 +30,7 @@ int print_number(va_list list)
 		newnum /= 10;
 		i--;
 	}
-
+	
 	while (numarray[i])
 	{
 		_putchar(numarray[i]);
