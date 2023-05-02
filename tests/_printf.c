@@ -15,23 +15,37 @@ int _printf(const char *format, ...)
 	for (n = 0; format[n] != '\0'; n++)
 	{
 		if (format[n] != '%' && format[n])
-			_putchar(format[n]), len++;
-		if (format[n] == '%' && (format[n + 1] == '\0' || format[n + 1] == ' '))
+		{_putchar(format[n]);
+			len++;
+		}
+		if (format[n] == '%' && format[n + 1] == '\0')
 			return (-1);
 		else if (format[n] == '%' && format[n + 1] == '%')
-			_putchar('%'), len++, n += 1;
+		{_putchar('%');
+			len++;
+			n += 1;
+		}
 		else if (format[n] == '%' && format[n + 1] == 'c')
-			len += print_char(list), n += 1;
+		{len += print_char(list);
+			n += 1;
+		}
 		else if (format[n] == '%' && format[n + 1] == 's')
-			len += print_string(list), n += 1;
+		{len += print_string(list);
+			n += 1;
+		}
 		else if (format[n] == '%' && (format[n + 1] == 'd' || format[n + 1] == 'i'))
-			len += print_number(list), n++;
+		{len += print_number(list);
+			n++;
+		}
 		else if (format[n] == '%' && (format[n + 1] == 'b'))
-			len += print_binary(list), n++;
+		{len += print_binary(list);
+			n++;
+		}
 		else if (format[n] == '%' && (format[n + 1] == 'o' || format[n + 1] == 'x' || format[n + 1] == 'X' || format[n + 1] == 'u'))
-			len += choose_fun(list, format[n + 1]), n++;
-		else if (format[n] == '%' && format[n + 1] == 'S')
-			len += print_custom_s(list), n++;
+		{len += choose_fun(list, format[n + 1]);
+			n++;
+		}
+
 	}
 	va_end(list);
 	return (len);

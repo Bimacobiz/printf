@@ -15,5 +15,7 @@ int print_octal(va_list list);
 int print_un_dec(va_list list);
 int print_hex(va_list list);
 int print_HEXA(va_list list);
+int print_custom_s(va_list list);
+int print_custHEX(unsigned int number);
 
 #endif
