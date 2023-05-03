@@ -32,6 +32,10 @@ int _printf(const char *format, ...)
 			len += choose_fun(list, format[n + 1]), n++;
 		else if (format[n] == '%' && format[n + 1] == 'S')
 			len += print_custom_s(list), n++;
+		else if (format[n] == '%' && format[n + 1] == 'p')
+		{	_putchar('0'), _putchar('x'), n++, len += 2;
+			len += choose_fun(list, 'x');
+		}
 	}
 	va_end(list);
 	return (len);

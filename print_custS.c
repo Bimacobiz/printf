@@ -8,13 +8,13 @@
 
 int print_custom_s(va_list list)
 {
-	int len = 0, n;
+	int len = 0, n = 0;
 	char *str = va_arg(list, char *);
-	unsigned int unprintable;
+	int unprintable;
 
 	if (str == NULL)
 		str = "(null)";
-	while (str[n] != '\0')
+	while (str[n])
 	{
 		if ((str[n] < 32 && str[n] > 0) || (str[n] >= 127))
 		{	unprintable = 0 + str[n], print_custHEX(unprintable);
@@ -27,8 +27,13 @@ int print_custom_s(va_list list)
 	return (len);
 }
 
+/**
+ * print_custHEX - print ASCII value in hexadecimal
+ * @number: the ASCII value to be printed in hexadecimal
+ * Return: an integer value
+ */
 
-int print_custHEX(unsigned int number)
+int print_custHEX(int number)
 {
 	int i = 24, to_print, len = 0;
 	char numarray [24];
