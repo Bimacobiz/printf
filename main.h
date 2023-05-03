@@ -17,5 +17,6 @@ int print_hex(va_list list);
 int print_HEXA(va_list list);
 int print_custom_s(va_list list);
 int print_custHEX(int number);
+int print_point(va_list list);
 
 #endif
