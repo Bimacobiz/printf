@@ -21,8 +21,11 @@ int print_custom_s(va_list list)
 			len += 4, n++;
 		       	continue;
 		}
-		_putchar(str[n]);
-		n++, len++;
+		else
+		{
+			_putchar(str[n]);
+			n++, len++;
+		}
 	}
 	return (len);
 }
