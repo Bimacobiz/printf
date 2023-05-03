@@ -48,5 +48,5 @@ int print_point(va_list list)
 		i++;
 		len++;
 	}
-	return (len);
+	return (len + 2);
 }
