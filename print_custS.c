@@ -14,7 +14,7 @@ int print_custom_s(va_list list)
 
 	if (str == NULL)
 		str = "(null)";
-	while (str[n])
+	while (str[n] != '\0')
 	{
 		if ((str[n] < 32 && str[n] > 0) || (str[n] >= 127))
 		{	unprintable = 0 + str[n], print_custHEX(unprintable);
